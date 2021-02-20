@@ -13,7 +13,8 @@ const oldPointStructure = {
 };
 
 function oldScrabbleScorer(word) {
-	word = word.toUpperCase();
+	console.log(word);
+  word = word.toUpperCase();
 	let letterPoints = "";
  
 	for (let i = 0; i < word.length; i++) {
@@ -53,6 +54,7 @@ let newPointStructure;
 
 function runProgram() {
    initialPrompt();
+   console.log(this.word);
    oldScrabbleScorer(this.word);
 }
 
