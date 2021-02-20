@@ -11,7 +11,7 @@ const oldPointStructure = {
   8: ['J', 'X'],
   10: ['Q', 'Z']
 };
-let word = "";
+
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
@@ -33,8 +33,8 @@ function oldScrabbleScorer(word) {
 // don't change the names or your program won't work as expected. //
 
 function initialPrompt() {
-   console.log("Let's play some scrabble! Enter a word:");
-   word = input.question("Enter a word: \n");
+   console.log("Let's play some scrabble! ");
+   let word = input.question("Enter a word: \n");
 };
 
 let simpleScore;
@@ -53,7 +53,7 @@ let newPointStructure;
 
 function runProgram() {
    initialPrompt();
-   oldScrabbleScorer();
+   oldScrabbleScorer(this.word);
 }
 
 // Don't write any code below this line //
