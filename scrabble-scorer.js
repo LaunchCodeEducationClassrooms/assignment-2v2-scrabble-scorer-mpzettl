@@ -11,7 +11,7 @@ const oldPointStructure = {
   8: ['J', 'X'],
   10: ['Q', 'Z']
 };
-
+let word = "";
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
@@ -23,7 +23,7 @@ function oldScrabbleScorer(word) {
 		 if (oldPointStructure[pointValue].includes(word[i])) {
 			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
 		 }
- 
+    console.log(letterPoints);
 	  }
 	}
 	return letterPoints;
@@ -34,7 +34,7 @@ function oldScrabbleScorer(word) {
 
 function initialPrompt() {
    console.log("Let's play some scrabble! Enter a word:");
-   initialPrompt = input.question("Enter a word: \n");
+   word = input.question("Enter a word: \n");
 };
 
 let simpleScore;
@@ -53,7 +53,7 @@ let newPointStructure;
 
 function runProgram() {
    initialPrompt();
-   
+   oldScrabbleScorer();
 }
 
 // Don't write any code below this line //
