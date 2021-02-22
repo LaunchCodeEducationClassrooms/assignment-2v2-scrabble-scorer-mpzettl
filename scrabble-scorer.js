@@ -25,15 +25,16 @@ function oldScrabbleScorer(word) {
 		 if (oldPointStructure[pointValue].includes(word[i])) {
 			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
 		 }
-    console.log(letterPoints);
+    
 	  }
-	}
+	}console.log(letterPoints);
 	return letterPoints;
  }
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
-
+//function simpleScorer: Define a function that takes a word as a parameter and returns a numerical score. Each letter within the word is worth 1 point.
+//vowelBonusScorer: Define a function that takes a word as a parameter and returns a score. Each vowel within the word is worth 3 points, and each consonant is worth 1 point.
 function initialPrompt() {
    
    console.log("Let's play some scrabble! ");
@@ -58,9 +59,8 @@ function transform() {};
 let newPointStructure;
 
 function runProgram() {
-   initialPrompt();
-  
-   oldScrabbleScorer();
+   
+   oldScrabbleScorer(initialPrompt(this.word));
 }
 
 // Don't write any code below this line //
