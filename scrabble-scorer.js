@@ -86,20 +86,21 @@ let vowelBonusScore = 3;
 let scrabbleScore;
 
 const scoringAlgorithms = {
-  0: ['Simple Score','Each letter is worth 1 point.', simpleScorer(this.word)], 
+  0: ['Simple Score','Each letter is worth 1 point.', simpleScorer()], 
 
   1:['Bonus Vowels','Vowels are 3 pts, consonants are 1 pt.', vowelBonusScorer(this.word)],
 
   2: ['Scrabble', 'The traditional scoring algorithm.', oldScrabbleScorer(this.word)]
 };
    
-function scorerPrompt() {
+function scorerPrompt(name, description, scorerFunction) {
 //console.log(word);
 scorerPick = input.question
 ("Enter a scorer to score your word: \n");
 
 if (scorerPick == 0){
   simpleScorer(this.word);
+  console.log(scoringAlgorithms[0].slice(0,1), scoringAlgorithms[0].slice(1,2),scoringAlgorithms[0].slice(2,3));
   //console.log(`Algorithm name: ${scoringAlgorithms[0].slice(0,1)}`);
 
   //console.log(`scorerFunction result: ${scoringAlgorithms[0].slice(2,2).scorerFunction(this.word)}`);
