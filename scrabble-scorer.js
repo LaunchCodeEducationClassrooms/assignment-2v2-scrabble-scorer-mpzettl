@@ -12,10 +12,10 @@ const  oldPointStructure= {
   10: ['Q', 'Z']
 };
 
-function oldScrabbleScorer() {
+function oldScrabbleScorer(word) {
   
-  word = "three";
-  word = word.toUpperCase();
+  //word = "three";
+  //word = word.toUpperCase();
 	let letterPoints = "";
  
 	for (let i = 0; i < word.length; i++) {
@@ -35,8 +35,8 @@ function oldScrabbleScorer() {
 // don't change the names or your program won't work as expected. //
 //function simpleScorer: Define a function that takes a word as a parameter and returns a numerical score. Each letter within the word is worth 1 point.
 function simpleScorer(word){
-  word = "one";
-  word = word.toUpperCase();
+  //word = "one";
+  //word = word.toUpperCase();
 	let letterPoints = "";
   for (let j = 0; j < word.length; j++) {
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
@@ -47,8 +47,8 @@ function simpleScorer(word){
 	  }
 //vowelBonusScorer: Define a function that takes a word as a parameter and returns a score. Each vowel within the word is worth 3 points, and each consonant is worth 1 point.
 function vowelBonusScorer(word){
-  word = "two";
-  word = word.toUpperCase();
+  //word = "two";
+  //word = word.toUpperCase();
 	letterPoints = "";
   
   for (let k = 0; k < word.length; k++) {
@@ -74,8 +74,8 @@ function initialPrompt() {
    
    console.log("Let's play some scrabble! ");
    
-   word = input.question("Enter a word to score: \n");
-
+   word = input.question("Enter a word to score: \n").toUpperCase();
+  console.log(word);
   return word; 
 };
 
@@ -86,11 +86,11 @@ let vowelBonusScore = 3;
 let scrabbleScore;
 
 const scoringAlgorithms = {
-  0: ['Simple Score','Each letter is worth 1 point.', simpleScorer()], 
+  0: ['Simple Score\n','Each letter is worth 1 point.\n', simpleScorer()], 
 
-  1:['Bonus Vowels','Vowels are 3 pts, consonants are 1 pt.', vowelBonusScorer(this.word)],
+  1:['Bonus Vowels','Vowels are 3 pts, consonants are 1 pt.', vowelBonusScorer()],
 
-  2: ['Scrabble', 'The traditional scoring algorithm.', oldScrabbleScorer(this.word)]
+  2: ['Scrabble', 'The traditional scoring algorithm.', oldScrabbleScorer()]
 };
    
 function scorerPrompt(name, description, scorerFunction) {
@@ -100,7 +100,7 @@ scorerPick = input.question
 
 if (scorerPick == 0){
   simpleScorer(this.word);
-  console.log(scoringAlgorithms[0].slice(0,1), scoringAlgorithms[0].slice(1,2),scoringAlgorithms[0].slice(2,3));
+  console.log(scoringAlgorithms[0].slice(0,1).toString(), scoringAlgorithms[0].slice(1,2).toString(),scoringAlgorithms[0].slice(2,3).toString());
   //console.log(`Algorithm name: ${scoringAlgorithms[0].slice(0,1)}`);
 
   //console.log(`scorerFunction result: ${scoringAlgorithms[0].slice(2,2).scorerFunction(this.word)}`);
@@ -108,13 +108,13 @@ if (scorerPick == 0){
   }else if (scorerPick == 1){
   vowelBonusScorer(this.word);
   //console.log(`Algorithm name: ${scoringAlgorithms[1].slice(0,1)}`);
-
+  console.log(scoringAlgorithms[1].slice(0,1).toString(), scoringAlgorithms[1].slice(1,2).toString(),scoringAlgorithms[1].slice(2,3).toString());
   //console.log(`scorerFunction result: ${scoringAlgorithms[1].slice(2,2).scorerFunction(this.word)}`);
 
   }else if (scorerPick == 2){
   oldScrabbleScorer(this.word);
   //console.log(`Algorithm name: ${scoringAlgorithms[2].slice(0,1)}`);
-
+  console.log(scoringAlgorithms[2].slice(0,1).toString(), scoringAlgorithms[2].slice(1,2).toString(),scoringAlgorithms[2].slice(2,3).toString());
   //console.log(`scorerFunction result: ${scoringAlgorithms[2].slice(2,2).scorerFunction(this.word)}`);
 
   }else{
@@ -127,15 +127,18 @@ function transform() {};
 let newPointStructure;
 
 function runProgram() {
-  let prompt = initialPrompt(this.word);
+  initialPrompt();
+  console.log(word);
+  console.log(this.word);
   //console.log(scoringAlgorithms[0]);
   //console.log(oldPointStructure[1].slice(0,5).map(function() {
  // return word, letterPoints;
 //}));console.log(word);
-  scorerPrompt(prompt);
-  //simpleScorer(prompt);
-  //vowelBonusScorer(prompt);
-  //oldScrabbleScorer(prompt);
+  //scorerPrompt(this.word);
+  simpleScorer(this.word);
+  //console.log(this.word);
+  vowelBonusScorer(this.word);
+  oldScrabbleScorer(this.word);
   }
 
 // Don't write any code below this line //
