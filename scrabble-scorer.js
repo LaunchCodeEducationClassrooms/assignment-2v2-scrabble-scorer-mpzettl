@@ -71,16 +71,28 @@ function initialPrompt() {
    return initialPrompt;
 };
 
-let simpleScore;
+let simpleScore = 1;
 
-let vowelBonusScore;
+let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [];
+const scoringAlgorithms = [/*[name, description, scorerFunction]*/[simpleScorer], [vowelBonusScorer], [oldScrabbleScorer]];
 
-function scorerPrompt() {}
+function scorerPrompt(word) {
+  scorerPick = input.question
+(`Your word is ${word}.\nEnter a scorer to score your word:\n1 for Simple Scorer\n2 for Vowel Bonus Scorer\n3 for Classic Scrabble\n`);
 
+  if (scorerPick == 1){
+  simpleScorer(word);
+}else if(scorerPick ==2){
+  vowelBonusScorer(word);
+}else if(scorerPick ==3){
+  oldScrabbleScorer(word);
+}else{
+  console.log("error");
+}
+}
 function transform() {};
 
 let newPointStructure;
@@ -88,9 +100,10 @@ let newPointStructure;
 function runProgram() {
    prompt = initialPrompt();
    console.log(prompt);
-   simpleScorer(prompt);
-   vowelBonusScorer(prompt);
-   oldScrabbleScorer(prompt);
+   scorerPrompt(prompt);
+   //simpleScorer(prompt);
+   //vowelBonusScorer(prompt);
+   //oldScrabbleScorer(prompt);
    
    
 }
