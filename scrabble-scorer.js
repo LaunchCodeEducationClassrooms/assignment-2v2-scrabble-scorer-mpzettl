@@ -82,13 +82,17 @@ const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is wor
 
 function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 for Simple Scorer\n1 for Vowel Bonus Scorer\n2 for Classic Scrabble\n`);console.log(word+ word);
-  console.log(scoringAlgorithms[scorerPick].scorerFuntion);
-
+  console.log(scoringAlgorithms[scorerPick].name);
+  
+  console.log(scoringAlgorithms[scorerPick].description);
+  
+  console.log( scoringAlgorithms[scorerPick].scorerFunction);  
+}
 //scorerPick= Number(scorerPick);
 //console.log(scorerPick, word)
 //return scorerPick, word;
 
-for (item in scoringAlgorithms[scorerPick]){
+/*for (item in scoringAlgorithms[scorerPick]){
   //for(let l=0; l<=scoringAlgorithms[scorerPick]; l++){
   //console.log (item);
   
@@ -102,10 +106,7 @@ console.log("scorerFunction result: ", scoringAlgorithms[scorerPick].scorerFunti
 }else{
   console.log("word undefined");
 }
-}
-//console.log(scoringAlgorithms[scorerPick].name, scoringAlgorithms[scorerPick].description,scoringAlgorithms[scorerPick].scoringFunction);
-//return this.word;
-}
+}*/
 /*for (item in scoringAlgorithms){
 console.log(scorerPick,
 typeof scorerPick, 
