@@ -65,9 +65,9 @@ function oldScrabbleScorer(word) {
 
 function initialPrompt() {
    console.log("Let's play some scrabble! Enter a word:");
-   initialPrompt = input.question("Enter a word: \n");
-   initialPrompt = initialPrompt.toUpperCase();
-   return initialPrompt;
+   word = input.question("Enter a word: \n");
+   word = word.toUpperCase();
+   return word;
 };
 
 let simpleScore = 1;
@@ -132,8 +132,7 @@ let newPointStructure;
 
 function runProgram() {
    initialPrompt();
-   
-   scorerPrompt(initialPrompt);
+   scorerPrompt(word);
    //simpleScorer(prompt);
    //vowelBonusScorer(prompt);
    //oldScrabbleScorer(prompt);
