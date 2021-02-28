@@ -13,7 +13,7 @@ const oldPointStructure = {
 };
 
 function simpleScorer(word){
-  
+  word="b";
 	let letterPoints = "";
   for (let j = 0; j < word.length; j++) {
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
@@ -23,7 +23,7 @@ function simpleScorer(word){
     
 	  }
 function vowelBonusScorer(word){
-  
+  word="o";
 	letterPoints = "";
   
   for (let k = 0; k < word.length; k++) {
@@ -44,7 +44,7 @@ function vowelBonusScorer(word){
   }
 
 function oldScrabbleScorer(word) {
-	
+	word="x";
 	let letterPoints = "";
  
 	for (let i = 0; i < word.length; i++) {
@@ -76,24 +76,36 @@ let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer()},
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction: vowelBonusScorer()}, 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer()}];
+const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer(word)},
+{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction: vowelBonusScorer(word)}, 
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer(word)}];
 
 function scorerPrompt(word) {
-  scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 for Simple Scorer\n1 for Vowel Bonus Scorer\n2 for Classic Scrabble\n`);
+  scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 for Simple Scorer\n1 for Vowel Bonus Scorer\n2 for Classic Scrabble\n`);console.log(word+ word);
+  console.log(scoringAlgorithms[scorerPick].scorerFuntion);
+
 //scorerPick= Number(scorerPick);
 //console.log(scorerPick, word)
 //return scorerPick, word;
-/*
+
 for (item in scoringAlgorithms[scorerPick]){
+  //for(let l=0; l<=scoringAlgorithms[scorerPick]; l++){
+  //console.log (item);
+  
+//}return item;
+if (word === true){
+  console.log(word);
   console.log(item +" " + scoringAlgorithms[scorerPick][item] + "\n");
-}
+console.log(word);
 console.log("algorithm name: ", scoringAlgorithms[scorerPick].name);
-console.log("scorerFunction result: ", scoringAlgorithms[item].scorerFunction(word));
+console.log("scorerFunction result: ", scoringAlgorithms[scorerPick].scorerFuntion);
+}else{
+  console.log("word undefined");
+}
+}
 //console.log(scoringAlgorithms[scorerPick].name, scoringAlgorithms[scorerPick].description,scoringAlgorithms[scorerPick].scoringFunction);
-return scorerPick, word;
-}*/
+//return this.word;
+}
 /*for (item in scoringAlgorithms){
 console.log(scorerPick,
 typeof scorerPick, 
@@ -102,7 +114,7 @@ scoringAlgorithms.map(function(n){
   return n.slice(scorerPick-1,scorerPick)
 }));
 };
-}*/
+}
 
   if (scorerPick == 0){
   simpleScorer(word);
@@ -112,8 +124,8 @@ scoringAlgorithms.map(function(n){
   oldScrabbleScorer(word);
 }else{
   console.log("error");
-}
-}
+}*/
+
 function transform() {};
 
 let newPointStructure;
