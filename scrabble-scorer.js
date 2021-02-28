@@ -83,13 +83,17 @@ const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is wor
 function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 for Simple Scorer\n1 for Vowel Bonus Scorer\n2 for Classic Scrabble\n`);
 //scorerPick= Number(scorerPick);
-
+//console.log(scorerPick, word)
+//return scorerPick, word;
+/*
 for (item in scoringAlgorithms[scorerPick]){
   console.log(item +" " + scoringAlgorithms[scorerPick][item] + "\n");
 }
+console.log("algorithm name: ", scoringAlgorithms[scorerPick].name);
+console.log("scorerFunction result: ", scoringAlgorithms[item].scorerFunction(word));
 //console.log(scoringAlgorithms[scorerPick].name, scoringAlgorithms[scorerPick].description,scoringAlgorithms[scorerPick].scoringFunction);
-
-}
+return scorerPick, word;
+}*/
 /*for (item in scoringAlgorithms){
 console.log(scorerPick,
 typeof scorerPick, 
@@ -99,17 +103,17 @@ scoringAlgorithms.map(function(n){
 }));
 };
 }*/
-/*
-  if (scorerPick == 1){
+
+  if (scorerPick == 0){
   simpleScorer(word);
-}else if(scorerPick ==2){
+}else if(scorerPick ==1){
   vowelBonusScorer(word);
-}else if(scorerPick ==3){
+}else if(scorerPick ==2){
   oldScrabbleScorer(word);
 }else{
   console.log("error");
-}*/
-
+}
+}
 function transform() {};
 
 let newPointStructure;
