@@ -13,7 +13,9 @@ const oldPointStructure = {
 };
 
 function simpleScorer(word){
-  word="b";
+  console.log(word);
+  return;
+  //word="b";
 	let letterPoints = "";
   for (let j = 0; j < word.length; j++) {
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
@@ -23,8 +25,10 @@ function simpleScorer(word){
     
 	  }
 function vowelBonusScorer(word){
-  word="o";
-	letterPoints = "";
+  console.log(word);
+  return;
+  //word="o";
+	//letterPoints = "";
   
   for (let k = 0; k < word.length; k++) {
   
@@ -39,12 +43,14 @@ function vowelBonusScorer(word){
         }
 
       }console.log(letterPoints);
-	return letterPoints;
+	//return letterPoints;
   }
   }
 
 function oldScrabbleScorer(word) {
-	word="x";
+  console.log(word);
+  return;
+	//word="x";
 	let letterPoints = "";
  
 	for (let i = 0; i < word.length; i++) {
@@ -57,7 +63,7 @@ function oldScrabbleScorer(word) {
  
 	  }
 	}console.log(letterPoints);
-	return letterPoints;
+	//return letterPoints;
  }
 
 // your job is to finish writing these functions and variables that we've named //
@@ -80,14 +86,31 @@ const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is wor
 {name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction: vowelBonusScorer()}, 
 {name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer()}];
 
-function scorerPrompt(word) {
-  scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 for Simple Scorer\n1 for Vowel Bonus Scorer\n2 for Classic Scrabble\n`);console.log(word+ word);
-  console.log(scoringAlgorithms[scorerPick].name);
-  
-  console.log(scoringAlgorithms[scorerPick].description);
-  
-  console.log( scoringAlgorithms[scorerPick].scorerFunction);  
+function scorerPrompt() {
+  scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
+  console.log(typeof scorerPick);
+  scorerPick = Number(scorerPick);
+  console.log(typeof scorerPick);
+  console.log(scoringAlgorithms[scorerPick]);
+  console.log(scoringAlgorithms[scorerPick].scorerFunction);
+  return (scoringAlgorithms[scorerPick]);
 }
+
+  /*
+  //console.log(word+ word);
+  //console.log(scoringAlgorithms[scorerPick].name);
+  
+  //console.log(scoringAlgorithms[scorerPick].description);
+  
+  //console.log( scoringAlgorithms[scorerPick].scorerFunction);  
+}
+for (let m = 0; m < scoringAlgorithms.length; m++){
+
+  for (item in scoringAlgorithms[m]){
+    
+    console.log(scoringAlgorithms[m][item]);
+  }
+}*/
 //scorerPick= Number(scorerPick);
 //console.log(scorerPick, word)
 //return scorerPick, word;
@@ -133,10 +156,16 @@ let newPointStructure;
 
 function runProgram() {
    initialPrompt();
+   console.log(word);
    scorerPrompt(word);
-   //simpleScorer(prompt);
-   //vowelBonusScorer(prompt);
-   //oldScrabbleScorer(prompt);
+   console.log(scoringAlgorithms[scorerPick].name,"\n");
+   console.log(scoringAlgorithms[scorerPick].description,"\n");
+    scoringAlgorithms[scorerPick].scorerFunction;
+    
+    
+   //simpleScorer(word);
+   //vowelBonusScorer(word);
+   //oldScrabbleScorer(word);
    
    
 }
