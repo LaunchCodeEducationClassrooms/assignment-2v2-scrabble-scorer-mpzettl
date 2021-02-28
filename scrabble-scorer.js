@@ -82,17 +82,18 @@ let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer()},
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction: vowelBonusScorer()}, 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer()}];
+const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:function simpleScorer(){simpleScorer(word)}},
+{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction: function vowelBonusScorer(){vowelBonusScorer(word)}}, 
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction: function oldScrabbleScorer(){oldScrabbleScorer(word)}}];
 
 function scorerPrompt() {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
-  console.log(typeof scorerPick);
+  /*console.log(typeof scorerPick);
   scorerPick = Number(scorerPick);
   console.log(typeof scorerPick);
   console.log(scoringAlgorithms[scorerPick]);
-  console.log(scoringAlgorithms[scorerPick].scorerFunction);
+  console.log(scoringAlgorithms[scorerPick].scorerFunction);*/
+  console.log(typeof scoringAlgorithms[scorerPick])
   return (scoringAlgorithms[scorerPick]);
 }
 
@@ -160,8 +161,8 @@ function runProgram() {
    scorerPrompt(word);
    console.log(scoringAlgorithms[scorerPick].name,"\n");
    console.log(scoringAlgorithms[scorerPick].description,"\n");
-    scoringAlgorithms[scorerPick].scorerFunction;
-    
+   console.log(word, scoringAlgorithms[scorerPick].scorerFunction);
+  
     
    //simpleScorer(word);
    //vowelBonusScorer(word);
