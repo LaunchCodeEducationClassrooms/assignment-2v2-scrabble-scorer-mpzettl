@@ -82,11 +82,11 @@ let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer},//{simpleScorer(word)
+const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer()},//{simpleScorer(word)
 
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer},//{vowelBonusScorer(word)
+{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer()},//{vowelBonusScorer(word)
 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer}];//{oldScrabbleScorer(word)}
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer()}];//{oldScrabbleScorer(word)}
 
 
 function scorerPrompt(word) {
@@ -96,10 +96,13 @@ function scorerPrompt(word) {
   console.log(typeof scorerPick);
   console.log(scoringAlgorithms[scorerPick]);
   console.log(scoringAlgorithms[scorerPick].scorerFunction);*/
-  console.log(typeof scoringAlgorithms[scorerPick], "\nword:", word);
-  let score = scoringAlgorithms[scorerPick];
   
-  return word, score;
+  console.log(typeof scoringAlgorithms[scorerPick], "\nword:", word);
+  //let score = scoringAlgorithms[scorerPick].scorerFunction;
+  
+  return scoringAlgorithms[scorerPick];
+  
+  
 }
 
   /*
@@ -163,9 +166,13 @@ let newPointStructure;
 function runProgram() {
    initialPrompt();
    console.log(word);
+
    scorerPrompt(word);
+
    console.log(scoringAlgorithms[scorerPick].name,"\n");
+   
    console.log(scoringAlgorithms[scorerPick].description,"\n");
+
    console.log(word, scoringAlgorithms[scorerPick].scorerFunction);
   
    
@@ -175,7 +182,7 @@ function runProgram() {
     
    //simpleScorer(word);
    //vowelBonusScorer(word);
-   //oldScrabbleScorer(word);
+  // oldScrabbleScorer(word);
    
    
 }
