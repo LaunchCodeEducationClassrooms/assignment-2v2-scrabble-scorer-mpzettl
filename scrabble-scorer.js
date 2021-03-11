@@ -45,7 +45,7 @@ let simpleScorer = function(word){
   let score = 0;
   for (let j = 0; j < word.length; j++) {
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
-    score = Number(score) + Number(pointValue);
+    score = Number(score) + simpleScore;
 		 }console.log(`Score for ${word}: ${score}`);
 	return letterPoints;
     
@@ -79,7 +79,7 @@ let oldScrabbleScorer = function(word) {
  
 	  for (const pointValue in oldPointStructure) {
  
-		 if (newPointStructure[pointValue].includes(word[i])) {
+		 if (oldPointStructure[pointValue].includes(word[i])) {
 			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
       score = Number(score) + Number(pointValue);
 		 }
@@ -134,7 +134,7 @@ function runProgram() {
    console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
   
    
-   
+   console.log(newPointStructure.a);
    
    
 }
