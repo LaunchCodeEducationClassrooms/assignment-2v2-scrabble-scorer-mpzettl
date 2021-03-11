@@ -13,8 +13,8 @@ const oldPointStructure = {
 };
 
 let simpleScorer = function(word){
-  console.log(word);
-  return;
+  //console.log(word);
+  //return;
   //word="b";
 	let letterPoints = "";
   for (let j = 0; j < word.length; j++) {
@@ -25,10 +25,10 @@ let simpleScorer = function(word){
     
 	  }
 let vowelBonusScorer = function(word){
-  console.log(word);
-  return;
+  //console.log(word);
+  //return;
   //word="o";
-	//letterPoints = "";
+	letterPoints = "";
   
   for (let k = 0; k < word.length; k++) {
   
@@ -48,8 +48,8 @@ let vowelBonusScorer = function(word){
   }
 
 let oldScrabbleScorer = function(word) {
-  console.log(word);
-  return;
+  //console.log(word);
+  //return;
 	//word="x";
 	let letterPoints = "";
  
@@ -69,7 +69,7 @@ let oldScrabbleScorer = function(word) {
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
-function initialPrompt() {
+function initialPrompt(word) {
    console.log("Let's play some scrabble! Enter a word:");
    word = input.question("Enter a word: \n");
    word = word.toUpperCase();
@@ -97,9 +97,10 @@ function scorerPrompt(word) {
   console.log(scoringAlgorithms[scorerPick]);
   console.log(scoringAlgorithms[scorerPick].scorerFunction);*/
   
-  console.log(typeof scoringAlgorithms[scorerPick], "\nword:", word);
-  //let score = scoringAlgorithms[scorerPick].scorerFunction;
+  //console.log(typeof scoringAlgorithms[scorerPick], "\nword:", word);
   
+ 
+
   return scoringAlgorithms[scorerPick];
   
   
@@ -164,25 +165,28 @@ function transform() {};
 let newPointStructure;
 
 function runProgram() {
+  //word = "scrabble";
    initialPrompt();
-   console.log(word);
+   //console.log(word);
 
-   scorerPrompt(word);
+   //scorerPrompt(word);
 
-   console.log(scoringAlgorithms[scorerPick].name,"\n");
+   //console.log(`score for your word ${word} is: ${scorerPrompt(word)}`);
+  
+   //console.log(scoringAlgorithms[scorerPick].name,"\n");
    
-   console.log(scoringAlgorithms[scorerPick].description,"\n");
+   //console.log(scoringAlgorithms[scorerPick].description,"\n");
 
-   console.log(word, scoringAlgorithms[scorerPick].scorerFunction);
+   //console.log(word, scoringAlgorithms[scorerPick].scorerFunction);
   
    
    //let score  = function(word){scoringAlgorithms[scorerPick.scorerFunction;}
-   let score = scoringAlgorithms[scorerPick.scorerFunction];
+   //let score = scoringAlgorithms[scorerPick.scorerFunction];
    //console.log(score);
     
    //simpleScorer(word);
    //vowelBonusScorer(word);
-  // oldScrabbleScorer(word);
+   //oldScrabbleScorer(word);
    
    
 }
