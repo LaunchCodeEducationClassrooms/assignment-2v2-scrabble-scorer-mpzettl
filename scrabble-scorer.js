@@ -12,7 +12,7 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
-function simpleScorer(word){
+let simpleScorer = function(word){
   console.log(word);
   return;
   //word="b";
@@ -24,7 +24,7 @@ function simpleScorer(word){
 	return letterPoints;
     
 	  }
-function vowelBonusScorer(word){
+let vowelBonusScorer = function(word){
   console.log(word);
   return;
   //word="o";
@@ -47,7 +47,7 @@ function vowelBonusScorer(word){
   }
   }
 
-function oldScrabbleScorer(word) {
+let oldScrabbleScorer = function(word) {
   console.log(word);
   return;
 	//word="x";
@@ -82,22 +82,22 @@ let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer(this.word)},//{simpleScorer(word)
+const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer},//{simpleScorer(word)
 
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer(this.word)},//{vowelBonusScorer(word)
+{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer},//{vowelBonusScorer(word)
 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer(this.word)}];//{oldScrabbleScorer(word)}
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer}];//{oldScrabbleScorer(word)}
 
 
-function scorerPrompt() {
+function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
   /*console.log(typeof scorerPick);
   scorerPick = Number(scorerPick);
   console.log(typeof scorerPick);
   console.log(scoringAlgorithms[scorerPick]);
   console.log(scoringAlgorithms[scorerPick].scorerFunction);*/
-  console.log(typeof scoringAlgorithms[scorerPick])
-  return (scoringAlgorithms[scorerPick]);
+  console.log(typeof scoringAlgorithms[scorerPick], "\nword:", word);
+  return word, scoringAlgorithms[scorerPick];
 }
 
   /*
@@ -166,9 +166,9 @@ function runProgram() {
    console.log(scoringAlgorithms[scorerPick].description,"\n");
    console.log(word, scoringAlgorithms[scorerPick].scorerFunction);
   
-   let score  =
-   scoringAlgorithms[scorerPick].scorerFunction;
-
+   
+   //let score  = function(word){scoringAlgorithms[scorerPick.scorerFunction;}
+   let score = scoringAlgorithms[scorerPick.scorerFunction];
    console.log(score);
     
    //simpleScorer(word);
