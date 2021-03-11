@@ -82,11 +82,11 @@ let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer(this.word)},//{simpleScorer(word)
+const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer},//{simpleScorer(word)
 
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer(this.word)},//{vowelBonusScorer(word)
+{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer},//{vowelBonusScorer(word)
 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer(this.word)}];//{oldScrabbleScorer(word)}
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer}];//{oldScrabbleScorer(word)}
 
 
 function scorerPrompt(word) {
