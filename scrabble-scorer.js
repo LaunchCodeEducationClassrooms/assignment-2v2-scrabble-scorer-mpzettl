@@ -171,7 +171,7 @@ function runProgram() {
    
    //let score  = function(word){scoringAlgorithms[scorerPick.scorerFunction;}
    let score = scoringAlgorithms[scorerPick.scorerFunction];
-   console.log(score);
+   //console.log(score);
     
    //simpleScorer(word);
    //vowelBonusScorer(word);
