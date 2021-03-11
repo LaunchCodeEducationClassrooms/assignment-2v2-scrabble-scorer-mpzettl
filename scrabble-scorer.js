@@ -55,16 +55,16 @@ let vowelBonusScorer = function(word){
   let score = 0;
   for (let k = 0; k < word.length; k++) {
   
-    for (const vowel in word) {
+    for (const letter in word) {
       
-      if ((oldPointStructure[1].slice(0,5)).includes(word[vowel])){
+      if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
           
-          letterPoints+= `Points for '${word[vowel]}': ${vowelBonusScore}\n`;
-          score = Number(score) + Number(pointValue);
+          letterPoints+= `Points for '${word[letter]}': ${vowelBonusScore}\n`;
+          score = Number(score) + vowelBonusScore;
         
         }else{
-          letterPoints+= `Points for '${word[vowel]}': ${simpleScore}\n`;
-          score = Number(score) + Number(pointValue);
+          letterPoints+= `Points for '${word[letter]}': ${simpleScore}\n`;
+          score = Number(score) + simpleScore;
         }
 
       }console.log(`Score for ${word}: ${score}`);
@@ -134,7 +134,7 @@ function runProgram() {
    console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
   
    
-   console.log(newPointStructure.a);
+   //console.log(newPointStructure.a);
    
    
 }
