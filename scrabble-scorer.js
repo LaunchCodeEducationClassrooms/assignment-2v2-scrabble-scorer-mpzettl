@@ -97,7 +97,9 @@ function scorerPrompt(word) {
   console.log(scoringAlgorithms[scorerPick]);
   console.log(scoringAlgorithms[scorerPick].scorerFunction);*/
   console.log(typeof scoringAlgorithms[scorerPick], "\nword:", word);
-  return word, scoringAlgorithms[scorerPick];
+  let score = scoringAlgorithms[scorerPick];
+  
+  return word, score;
 }
 
   /*
