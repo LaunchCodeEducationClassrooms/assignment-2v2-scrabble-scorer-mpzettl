@@ -43,7 +43,7 @@ function vowelBonusScorer(word){
         }
 
       }console.log(letterPoints);
-	//return letterPoints;
+	return letterPoints;
   }
   }
 
@@ -63,7 +63,7 @@ function oldScrabbleScorer(word) {
  
 	  }
 	}console.log(letterPoints);
-	//return letterPoints;
+	return letterPoints;
  }
 
 // your job is to finish writing these functions and variables that we've named //
@@ -82,9 +82,12 @@ let vowelBonusScore = 3;
 
 let scrabbleScore;
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:function simpleScorer(){simpleScorer(word)}},
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction: function vowelBonusScorer(){vowelBonusScorer(word)}}, 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction: function oldScrabbleScorer(){oldScrabbleScorer(word)}}];
+const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer(this.word)},//{simpleScorer(word)
+
+{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer(this.word)},//{vowelBonusScorer(word)
+
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer(this.word)}];//{oldScrabbleScorer(word)}
+
 
 function scorerPrompt() {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
@@ -163,6 +166,10 @@ function runProgram() {
    console.log(scoringAlgorithms[scorerPick].description,"\n");
    console.log(word, scoringAlgorithms[scorerPick].scorerFunction);
   
+   let score  =
+   scoringAlgorithms[scorerPick].scorerFunction;
+
+   console.log(score);
     
    //simpleScorer(word);
    //vowelBonusScorer(word);
@@ -184,5 +191,5 @@ module.exports = {
    newPointStructure: newPointStructure,
 	runProgram: runProgram,
 	scorerPrompt: scorerPrompt
-};
+  };
 
