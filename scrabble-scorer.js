@@ -92,36 +92,42 @@ function scorerPrompt(word) {
 
   
 
-function transform() {};
+function transform(oldPointStructure) {
+  
+  let newStructure ={};
+    
+    for(const oldKey in oldPointStructure){//a
+      for (let i=0;i<=oldKey.length;i++){
+    
+      let oldValue = oldPointStructure[oldKey][i];
+      newStructure[oldValue]= oldKey[i];
+      //console.log(oldValue);
+      /*for (item in oldValue){
+        for (let j= 0; j<=oldValue; j++){
+        let newKey = oldValue[j];
+        //console.log(newKey);
+        }
+      }*/
+      
+      //console.log(oldValue);
+      
+      }
+      /*let newValue = oldKey;
+      
+    
+      let newKey = oldValue;
+      
 
-let newPointStructure = {
-  a: 1,
-  b: 3,
-  c: 3,
-  d: 2,
-  e: 1,
-  f: 4,
-  g: 2,
-  h: 4,
-  i: 1,
-  j: 8,
-  k: 5,
-  l: 1,
-  m: 3,
-  n: 1,
-  o: 1,
-  p: 3,
-  q: 10,
-  r: 1,
-  s: 1,
-  t: 1,
-  u: 1,
-  v: 4,
-  w: 4,
-  x: 8,
-  y: 4,
-  z: 10
-}
+      newStructure[newKey]= newValue;
+       
+    }*/
+  
+    }console.log(5, newStructure);
+    return newStructure;
+};
+
+let newPointStructure = transform(oldPointStructure);
+
 
 function runProgram() {
    initialPrompt();
@@ -153,3 +159,11 @@ module.exports = {
 	scorerPrompt: scorerPrompt
   };
 
+//console.log(transform(oldPointStructure['1'][0]));
+//console.log(transform(oldPointStructure));
+//console.log("Letters with score '4':", oldPointStructure['4']);
+//console.log("3rd letter within the key '4' array:", oldPointStructure['1'][0]);
+
+//let letters = oldPointStructure['8'];
+//console.log("Letters with score '8':", letters);
+//console.log("2nd letter within the key '8' //array:", letters[1]);
