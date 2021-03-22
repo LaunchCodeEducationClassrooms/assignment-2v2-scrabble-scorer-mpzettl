@@ -12,18 +12,18 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
-let simpleScorer = function(word){
+function simpleScorer(word){
 	let letterPoints = "";
   let score = 0;
   for (let j = 0; j < word.length; j++) {
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
-    score = Number(score) + simpleScore;
+    score = Number(score) + Number(simpleScore);
 		 }console.log(`Score for ${word}: ${score}`);
      letterPoints = Number(letterPoints);
 	return letterPoints;
     
 	  }
-let vowelBonusScorer = function(word){
+function vowelBonusScorer(word){
 	let letterPoints = "";
   let score = 0;
   for (let k = 0; k < word.length; k++) {
@@ -37,7 +37,7 @@ let vowelBonusScorer = function(word){
         
         }else{
           letterPoints+= `Points for '${word[letter]}': ${simpleScore}\n`;
-          score = Number(score) + simpleScore;
+          score = Number(score) + Number(simpleScore);
         }
 
       }console.log(`Score for ${word}: ${score}`);
@@ -46,7 +46,7 @@ let vowelBonusScorer = function(word){
   }
   }
 
-let oldScrabbleScorer = function(word) {
+function oldScrabbleScorer(word) {
 	let letterPoints = "";
   let score = 0;
 	for (let i = 0; i < word.length; i++) {
