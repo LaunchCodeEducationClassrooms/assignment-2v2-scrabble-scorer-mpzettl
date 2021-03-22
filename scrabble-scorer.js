@@ -20,7 +20,7 @@ function simpleScorer(word){
     score = Number(score) + Number(simpleScore);
 		 }console.log(`Score for ${word}: ${score}`);
      letterPoints = Number(letterPoints);
-	return letterPoints;
+	return score;//letterPoints;
     
 	  }
 function vowelBonusScorer(word){
@@ -32,17 +32,16 @@ function vowelBonusScorer(word){
       
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
           
-          //letterPoints+= `Points for '${word[letter]}': ${vowelBonusScore}\n`;
           score = Number(score) + vowelBonusScore;
         
         }else{
-          //letterPoints+= `Points for '${word[letter]}': ${simpleScore}\n`;
+          
           score = Number(score) + Number(simpleScore);
         }
 
       }console.log(`Score for ${word}: ${score}`);
       letterPoints = Number(letterPoints);
-	return letterPoints;
+	return score;//letterPoints;
   }
   }
 
@@ -54,14 +53,14 @@ function oldScrabbleScorer(word) {
 	  for (const pointValue in oldPointStructure) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
-			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+			
       score = Number(score) + Number(pointValue);
 		 }
  
 	  }
 	} console.log(`Score for ${word}: ${score}`);
   letterPoints = Number(letterPoints);
-	return letterPoints;
+	return score;//letterPoints;
  }
 
 // your job is to finish writing these functions and variables that we've named //
@@ -80,22 +79,20 @@ let vowelBonusScore = 3;
 
 let scrabbleScore = function(word){
   let letterPoints = "";
-  
-  
   let score = 0;
 	for (let i = 0; i < word.length; i++) {
     
 	  for (const letterKey in newPointStructure) {
       let letterScore = newPointStructure[letterKey];
 		 if (letterKey.includes(word[i].toLowerCase())) {
-			//letterPoints += `Points for '${word[i]}': ${letterScore}\n`
+			
       score = Number(score) + Number(letterScore);
 		 }
  
 	  }
 	} console.log(`Score for ${word}: ${score}`);
   letterPoints = Number(letterPoints);
-	return letterPoints;
+	return score;//letterPoints;
  };
 
 const scoringAlgorithms = [{name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer},
@@ -111,23 +108,19 @@ function scorerPrompt(word) {
   return scoringAlgorithms[scorerPick];
 }
 
-  
-
 function transform(oldPointStructure) {
   
   let newStructure ={};
     
-    for(oldKey in oldPointStructure){//a
+    for(oldKey in oldPointStructure){
       
       for (let i=0;i<oldPointStructure[oldKey].length;i++){
         
       let oldValue = oldPointStructure[oldKey][i].toLowerCase();
       newStructure[oldValue]= oldKey;
       
-      
       }
-      
-  
+
     }
     return newStructure;
 };
