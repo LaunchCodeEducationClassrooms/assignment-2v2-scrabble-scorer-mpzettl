@@ -98,11 +98,11 @@ let scrabbleScore = function(word){
 	return letterPoints;
  };
 
-const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer},
+const scoringAlgorithms = [{name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer},
 
-{name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer},
+{name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScorer},
 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:scrabbleScore}];
+{name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScore}];
 
 
 function scorerPrompt(word) {
