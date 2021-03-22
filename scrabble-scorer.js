@@ -78,15 +78,13 @@ let vowelBonusScore = 3;
 let scrabbleScore = function(word){
   let letterPoints = "";
   
-  console.log(-2, word);
+  
   let score = 0;
 	for (let i = 0; i < word.length; i++) {
-    console.log(-1, word, word[i]);
+    
 	  for (const letterKey in newPointStructure) {
       let letterScore = newPointStructure[letterKey];
-		 if (letterKey.includes(word[i])) {
-       console.log(1, letterKey, word[i],letterScore);
-       
+		 if (letterKey.includes(word[i].toLowerCase())) {
 			letterPoints += `Points for '${word[i]}': ${letterScore}\n`
       score = Number(score) + Number(letterScore);
 		 }
@@ -100,7 +98,7 @@ const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is wor
 
 {name:'Bonus Vowels' ,description:'Vowels are 3 pts, consonants are 1 pt.' , scorerFunction:vowelBonusScorer},
 
-{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:oldScrabbleScorer}];
+{name:'Scrabble' ,description:'The traditional scoring algorithm.' , scorerFunction:scrabbleScore}];
 
 
 function scorerPrompt(word) {
@@ -166,7 +164,9 @@ module.exports = {
 //console.log(transform(oldPointStructure['1'][0]));
 //console.log(transform(oldPointStructure));
 //console.log(6, transform(oldPointStructure));
-console.log(7, scrabbleScore('dogbert'));
+console.log(scrabbleScore('JavaScript'));
+console.log(scrabbleScore('Scrabble'));
+console.log(scrabbleScore('Zox'));
 //console.log("Letters with score '4':", oldPointStructure['4']);
 //console.log("3rd letter within the key '4' array:", oldPointStructure['1'][0]);
 
