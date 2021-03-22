@@ -32,11 +32,11 @@ function vowelBonusScorer(word){
       
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
           
-          letterPoints+= `Points for '${word[letter]}': ${vowelBonusScore}\n`;
+          //letterPoints+= `Points for '${word[letter]}': ${vowelBonusScore}\n`;
           score = Number(score) + vowelBonusScore;
         
         }else{
-          letterPoints+= `Points for '${word[letter]}': ${simpleScore}\n`;
+          //letterPoints+= `Points for '${word[letter]}': ${simpleScore}\n`;
           score = Number(score) + Number(simpleScore);
         }
 
@@ -54,7 +54,7 @@ function oldScrabbleScorer(word) {
 	  for (const pointValue in oldPointStructure) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
-			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
       score = Number(score) + Number(pointValue);
 		 }
  
@@ -87,7 +87,7 @@ let scrabbleScore = function(word){
 	  for (const letterKey in newPointStructure) {
       let letterScore = newPointStructure[letterKey];
 		 if (letterKey.includes(word[i].toLowerCase())) {
-			letterPoints += `Points for '${word[i]}': ${letterScore}\n`
+			//letterPoints += `Points for '${word[i]}': ${letterScore}\n`
       score = Number(score) + Number(letterScore);
 		 }
  
