@@ -96,8 +96,9 @@ function transform(oldPointStructure) {
   
   let newStructure ={};
     
-    for(const oldKey in oldPointStructure){//a
-      for (let i=0;i<=10;i++){
+    for(oldKey in oldPointStructure){//a
+      
+      for (let i=0;i<oldPointStructure[oldKey].length;i++){
     
       let oldValue = oldPointStructure[oldKey][i];
       newStructure[oldValue]= oldKey;
@@ -106,7 +107,7 @@ function transform(oldPointStructure) {
       }
       
   
-    }console.log(5, newStructure);
+    }//console.log(5, newStructure);
     return newStructure;
 };
 
