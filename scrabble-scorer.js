@@ -20,7 +20,7 @@ function simpleScorer(word){
     score = Number(score) + Number(simpleScore);
 		 }console.log(`Score for ${word}: ${score}`);
      letterPoints = Number(letterPoints);
-	return score;//letterPoints;
+	return score;//letterPoints; simpleScorer(word), 
     
 	  }
 function vowelBonusScorer(word){
@@ -41,7 +41,7 @@ function vowelBonusScorer(word){
 
       }console.log(`Score for ${word}: ${score}`);
       letterPoints = Number(letterPoints);
-	return score;//letterPoints;
+	return score;//letterPoints; vowelBonusScorer(word), 
   }
   }
 
@@ -60,7 +60,7 @@ function oldScrabbleScorer(word) {
 	  }
 	} console.log(`Score for ${word}: ${score}`);
   letterPoints = Number(letterPoints);
-	return score;//letterPoints;
+	return score;//letterPoints; oldScrabbleScorer(word), 
  }
 
 // your job is to finish writing these functions and variables that we've named //
@@ -92,14 +92,14 @@ let scrabbleScore = function(word){
 	  }
 	} console.log(`Score for ${word}: ${score}`);
   letterPoints = Number(letterPoints);
-	return score;//letterPoints;
+	return score;//letterPoints; scrabbleScore(word), 
  };
 
-const scoringAlgorithms = [{name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer},
+const scoringAlgorithms = [{ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer },
 
-{name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScorer},
+{ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScorer },
 
-{name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScore}];
+{ name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScore }];
 
 
 function scorerPrompt(word) {
