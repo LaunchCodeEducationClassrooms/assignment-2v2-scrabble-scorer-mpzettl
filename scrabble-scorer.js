@@ -97,30 +97,14 @@ function transform(oldPointStructure) {
   let newStructure ={};
     
     for(const oldKey in oldPointStructure){//a
-      for (let i=0;i<=oldKey.length;i++){
+      for (let i=0;i<=10;i++){
     
       let oldValue = oldPointStructure[oldKey][i];
-      newStructure[oldValue]= oldKey[i];
-      //console.log(oldValue);
-      /*for (item in oldValue){
-        for (let j= 0; j<=oldValue; j++){
-        let newKey = oldValue[j];
-        //console.log(newKey);
-        }
-      }*/
+      newStructure[oldValue]= oldKey;
       
-      //console.log(oldValue);
       
       }
-      /*let newValue = oldKey;
       
-    
-      let newKey = oldValue;
-      
-
-      newStructure[newKey]= newValue;
-       
-    }*/
   
     }console.log(5, newStructure);
     return newStructure;
@@ -161,6 +145,7 @@ module.exports = {
 
 //console.log(transform(oldPointStructure['1'][0]));
 //console.log(transform(oldPointStructure));
+console.log(6, transform(oldPointStructure));
 //console.log("Letters with score '4':", oldPointStructure['4']);
 //console.log("3rd letter within the key '4' array:", oldPointStructure['1'][0]);
 
