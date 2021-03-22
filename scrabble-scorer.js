@@ -77,17 +77,20 @@ let vowelBonusScore = 3;
 
 let scrabbleScore = function(word){
   let letterPoints = "";
-  word = word.toLowerCase;
+  //word = word.toLowerCase;
+  console.log(-2, word);
   let score = 0;
 	for (let i = 0; i < word.length; i++) {
     console.log(-1, word, word[i]);
 	  for (const letterKey in newPointStructure) {
-      console.log(0, letterKey[i]);
-		 if ((word[i]===newPointStructure[letterKey][i])) {
-       console.log(1,[letterKey][i]);
-       console.log(2, word[i]);
-			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-      score = Number(score) + Number(letterkey);
+      console.log(0, letterKey); 
+      
+      console.log(0.1, newPointStructure[letterKey]);
+		 if (letterKey.includes(word[i])) {
+       console.log(1, letterKey);
+       console.log(2, word[i]);break;
+			letterPoints += `Points for '${word[i]}': ${letterKey}\n`
+      score = Number(score) + Number(letterKey);
 		 }else{
        console.log(3, "nope");
      }
