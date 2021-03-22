@@ -19,6 +19,7 @@ let simpleScorer = function(word){
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
     score = Number(score) + simpleScore;
 		 }console.log(`Score for ${word}: ${score}`);
+     letterPoints = Number(letterPoints);
 	return letterPoints;
     
 	  }
@@ -40,6 +41,7 @@ let vowelBonusScorer = function(word){
         }
 
       }console.log(`Score for ${word}: ${score}`);
+      letterPoints = Number(letterPoints);
 	return letterPoints;
   }
   }
