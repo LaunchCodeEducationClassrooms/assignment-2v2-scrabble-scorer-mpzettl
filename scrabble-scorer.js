@@ -77,15 +77,20 @@ let vowelBonusScore = 3;
 
 let scrabbleScore = function(word){
   let letterPoints = "";
+  word = word.toLowerCase;
   let score = 0;
 	for (let i = 0; i < word.length; i++) {
- 
-	  for (const pointValue in newPointStructure) {
- 
-		 if (newPointStructure[pointValue].includes(word[i])) {
+    console.log(-1, word, word[i]);
+	  for (const letterKey in newPointStructure) {
+      console.log(0, letterKey[i]);
+		 if ((word[i]===newPointStructure[letterKey][i])) {
+       console.log(1,[letterKey][i]);
+       console.log(2, word[i]);
 			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-      score = Number(score) + Number(pointValue);
-		 }
+      score = Number(score) + Number(letterkey);
+		 }else{
+       console.log(3, "nope");
+     }
  
 	  }
 	} console.log(`Score for ${word}: ${score}`);
@@ -114,8 +119,8 @@ function transform(oldPointStructure) {
     for(oldKey in oldPointStructure){//a
       
       for (let i=0;i<oldPointStructure[oldKey].length;i++){
-    
-      let oldValue = oldPointStructure[oldKey][i];
+        
+      let oldValue = oldPointStructure[oldKey][i].toLowerCase();
       newStructure[oldValue]= oldKey;
       
       
@@ -161,7 +166,8 @@ module.exports = {
 
 //console.log(transform(oldPointStructure['1'][0]));
 //console.log(transform(oldPointStructure));
-console.log(6, transform(oldPointStructure));
+//console.log(6, transform(oldPointStructure));
+console.log(7, scrabbleScore('dogbert'));
 //console.log("Letters with score '4':", oldPointStructure['4']);
 //console.log("3rd letter within the key '4' array:", oldPointStructure['1'][0]);
 
