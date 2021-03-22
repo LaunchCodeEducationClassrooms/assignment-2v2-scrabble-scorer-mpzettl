@@ -75,7 +75,22 @@ let simpleScore = 1;
 
 let vowelBonusScore = 3;
 
-let scrabbleScore;
+let scrabbleScore = function(word){
+  let letterPoints = "";
+  let score = 0;
+	for (let i = 0; i < word.length; i++) {
+ 
+	  for (const pointValue in newPointStructure) {
+ 
+		 if (newPointStructure[pointValue].includes(word[i])) {
+			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+      score = Number(score) + Number(pointValue);
+		 }
+ 
+	  }
+	} console.log(`Score for ${word}: ${score}`);
+	return letterPoints;
+ };
 
 const scoringAlgorithms = [{name:'Simple Score', description:'Each letter is worth 1 point.\n', scorerFunction:simpleScorer},
 
@@ -107,7 +122,7 @@ function transform(oldPointStructure) {
       }
       
   
-    }//console.log(5, newStructure);
+    }
     return newStructure;
 };
 
