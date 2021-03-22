@@ -141,8 +141,6 @@ function runProgram() {
    console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
   
    
-   //console.log(newPointStructure.a);
-   
    
 }
 
@@ -161,15 +159,3 @@ module.exports = {
 	scorerPrompt: scorerPrompt
   };
 
-//console.log(transform(oldPointStructure['1'][0]));
-//console.log(transform(oldPointStructure));
-//console.log(6, transform(oldPointStructure));
-console.log(scrabbleScore('JavaScript'));
-console.log(scrabbleScore('Scrabble'));
-console.log(scrabbleScore('Zox'));
-//console.log("Letters with score '4':", oldPointStructure['4']);
-//console.log("3rd letter within the key '4' array:", oldPointStructure['1'][0]);
-
-//let letters = oldPointStructure['8'];
-//console.log("Letters with score '8':", letters);
-//console.log("2nd letter within the key '8' //array:", letters[1]);
