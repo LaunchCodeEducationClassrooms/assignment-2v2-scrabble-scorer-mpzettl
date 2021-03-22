@@ -60,6 +60,7 @@ function oldScrabbleScorer(word) {
  
 	  }
 	} console.log(`Score for ${word}: ${score}`);
+  letterPoints = Number(letterPoints);
 	return letterPoints;
  }
 
@@ -93,6 +94,7 @@ let scrabbleScore = function(word){
  
 	  }
 	} console.log(`Score for ${word}: ${score}`);
+  letterPoints = Number(letterPoints);
 	return letterPoints;
  };
 
