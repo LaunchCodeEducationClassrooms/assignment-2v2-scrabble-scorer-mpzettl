@@ -54,7 +54,7 @@ function simpleScore(word){
     
 	  };
 function vowelBonusScore(word){
-	let letterPoints = "";
+	//let letterPoints = "";
   let score = 0;
   if(word !== undefined){
   
@@ -66,12 +66,14 @@ function vowelBonusScore(word){
       //if((newPointStructure))
           //word[letter].toLowerCase();
           score += 3;//Number(vowelBonusScorer);
-          
-          console.log(1)
+          console.log(1, letter, score);
+        }else if (word ==="") {
+          score = 0
+          return score;
         }else{
-          //word[letter].toLowerCase();
+          
           score += 1;//Number(simpleScorer);
-          console.log(2)
+          console.log(2, letter, score);
         }
 
       }
@@ -140,7 +142,7 @@ function runProgram() {
    //console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
   console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
    
-   console.log(vowelBonusScore("aei"));
+   //console.log(vowelBonusScore("aei"));
 }
 
 // Don't write any code below this line //
