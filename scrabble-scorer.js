@@ -34,7 +34,7 @@ function vowelBonusScore(word){
   
     for (const letter in word) {
       
-      if ((oldPointStructure[1].slice(0,5)).includes(word[letter].toLowerCase();)){
+      if ((oldPointStructure[1].slice(0,5)).includes(word[letter].toLowerCase())){
           
           score = Number(score) + Number(vowelBonusScorer);
         
