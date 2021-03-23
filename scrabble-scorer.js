@@ -58,7 +58,7 @@ function simpleScore(word){
     
  } };
 function vowelBonusScore(word){
-	
+	word = word.toUpperCase();
   let score = 0;
   if (word ==="") {
           
@@ -73,13 +73,13 @@ function vowelBonusScore(word){
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
      
           score += 3;;
-          console.log(1, letter, score);
+          
         }else{
           
-          score += 1;
-          console.log(2, letter, score);    
+          score += 1;   
         }
       }
+      
 	return score;
   }
 }
@@ -146,7 +146,7 @@ function runProgram() {
    //console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
   //console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
    
-   console.log(vowelBonusScore("aei"));
+   
 }
 
 // Don't write any code below this line //
