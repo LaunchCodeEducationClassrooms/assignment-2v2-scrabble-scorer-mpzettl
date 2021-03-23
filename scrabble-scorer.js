@@ -102,13 +102,14 @@ let scrabbleScore = function(word){
 	return score;//letterPoints; scrabbleScore(word), 
  }};
 
-const scoringAlgorithms = [Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: function(word){ return simpleScore(word)} }),
+const scoringAlgorithms = [Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction:simpleScore }),
 
-Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: function(word){ return vowelBonusScore(word)} }),
+Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction:vowelBonusScore }),
 
-Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: function(word){ return scrabbleScore(word)} })];
-
-
+Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction:scrabbleScore  })];
+//function(input){ return simpleScore(word)}
+//function(input){ return vowelBonusScore(word)}
+//function(input){ return scrabbleScore(word)}
 function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
 
