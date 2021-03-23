@@ -17,8 +17,8 @@ function simpleScore(word){
   let score = 0;
   if(word !== undefined){
   for (let j = 0; j < word.length; j++) {
-    letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
-    score = Number(score) + Number(simpleScore);
+    letterPoints+= `Points for '${word[j]}': ${simpleScorer}\n`;
+    score = Number(score) + Number(simpleScorer);
 		 }console.log(`Score for ${word}: ${score}`);
      //letterPoints = Number(letterPoints);
 }
@@ -35,11 +35,11 @@ function vowelBonusScore(word){
       
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
           
-          score = Number(score) + Number(vowelBonusScore);
+          score = Number(score) + Number(vowelBonusScorer);
         
         }else{
           
-          score = Number(score) + Number(simpleScore);
+          score = Number(score) + Number(simpleScorer);
         }
 
       }//console.log(`Score for ${word}: ${score}`);
@@ -78,9 +78,9 @@ function initialPrompt() {
    return word;
 };
 
-let simpleScore = 1;
+let simpleScorer = 1;
 
-let vowelBonusScore = 3;
+let vowelBonusScorer = 3;
 
 let scrabbleScore = function(word){
   let letterPoints = "";
