@@ -128,7 +128,7 @@ function transform(oldPointStructure) {
       for (let i=0;i<oldPointStructure[oldKey].length;i++){
         
       let oldValue = oldPointStructure[oldKey][i].toLowerCase();
-      newStructure[oldValue]= oldKey;
+      newStructure[oldValue]= Number(oldKey);
       
       }
 
