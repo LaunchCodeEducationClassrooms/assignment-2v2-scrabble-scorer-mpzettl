@@ -46,7 +46,7 @@ function simpleScore(word){
   let score = 0;
   if(word !== undefined){
   for (let j = 0; j < word.length; j++) {
-    letterPoints+= `Points for '${word[j]}': ${simpleScorer}\n`;
+    //letterPoints+= `Points for '${word[j]}': 1\n`;
     score = Number(score) + 1;
 		 }//console.log(`Score for ${word}: ${score}`);
      //letterPoints = Number(letterPoints);
