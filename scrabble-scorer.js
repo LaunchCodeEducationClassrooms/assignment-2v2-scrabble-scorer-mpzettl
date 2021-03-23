@@ -34,13 +34,13 @@ function vowelBonusScore(word){
   
     for (const letter in word) {
       
-      if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
-          word[letter].toLowerCase();
+      if ((oldPointStructure[1].slice(0,5)).includes(word[letter].toLowerCase();)){
+          
           score = Number(score) + Number(vowelBonusScorer);
         
         }else{
           
-          score = Number(score) + Number(simpleScorer);
+          score = Number(score) + 1;//Number(simpleScorer);
         }
 
       }//console.log(`Score for ${word}: ${score}`);
