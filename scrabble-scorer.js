@@ -12,44 +12,6 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
-function simpleScore(word){
-	let letterPoints = "";
-  let score = 0;
-  if(word !== undefined){
-  for (let j = 0; j < word.length; j++) {
-    letterPoints+= `Points for '${word[j]}': ${simpleScorer}\n`;
-    score = Number(score) + Number(simpleScorer);
-		 }//console.log(`Score for ${word}: ${score}`);
-     //letterPoints = Number(letterPoints);
-     
-}return score;
-	//letterPoints; simpleScorer(word), 
-    
-	  }
-function vowelBonusScore(word){
-	let letterPoints = "";
-  let score = 0;
-  if(word !== undefined){
-  for (let k = 0; k < word.length; k++) {
-  
-    for (const letter in word) {
-      
-      if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
-          word[letter].toLowerCase();
-          score = Number(score) + Number(vowelBonusScorer);
-        
-        }else{
-          
-          score = Number(score) + 1;//Number(simpleScorer);
-        }
-
-      }//console.log(`Score for ${word}: ${score}`);
-      //letterPoints = Number(letterPoints);
-
-	return score;//letterPoints; vowelBonusScorer(word), 
-  }}
-  }
-
 function oldScrabbleScorer(word) {
 	let letterPoints = "";
   let score = 0;
@@ -79,9 +41,43 @@ function initialPrompt() {
    return word;
 };
 
-let simpleScorer = 1;
+function simpleScore(word){
+	let letterPoints = "";
+  let score = 0;
+  if(word !== undefined){
+  for (let j = 0; j < word.length; j++) {
+    letterPoints+= `Points for '${word[j]}': ${simpleScorer}\n`;
+    score = Number(score) + 1;
+		 }//console.log(`Score for ${word}: ${score}`);
+     //letterPoints = Number(letterPoints);
+     
+}return score;
+	//letterPoints; simpleScorer(word), 
+    
+	  };
+function vowelBonusScore(word){
+	let letterPoints = "";
+  let score = 0;
+  if(word !== undefined){
+    ;
+  for (let k = 0; k < word.length; k++) {
+  
+    for (const letter in word) {
+      
+      if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
+          word[letter].toLowerCase();
+          score = Number(score) + 3;//Number(vowelBonusScorer);
+        
+        }else{
+          
+          score = Number(score) + 1;//Number(simpleScorer);
+        }
 
-let vowelBonusScorer = 3;
+      }//console.log(`Score for ${word}: ${score}`);
+      //letterPoints = Number(letterPoints);
+
+	return score;//letterPoints; vowelBonusScorer(word), 
+  }}};
 
 let scrabbleScore = function(word){
   let letterPoints = "";
