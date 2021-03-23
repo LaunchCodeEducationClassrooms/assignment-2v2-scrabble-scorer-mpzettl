@@ -12,7 +12,7 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
-function simpleScorer(word){
+function simpleScore(word){
 	let letterPoints = "";
   let score = 0;
   if(word !== undefined){
@@ -25,7 +25,7 @@ function simpleScorer(word){
 	return score;//letterPoints; simpleScorer(word), 
     
 	  }
-function vowelBonusScorer(word){
+function vowelBonusScore(word){
 	let letterPoints = "";
   let score = 0;
   if(word !== undefined){
@@ -35,7 +35,7 @@ function vowelBonusScorer(word){
       
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
           
-          score = Number(score) + vowelBonusScore;
+          score = Number(score) + Number(vowelBonusScore);
         
         }else{
           
@@ -101,9 +101,9 @@ let scrabbleScore = function(word){
 	return score;//letterPoints; scrabbleScore(word), 
  }};
 
-const scoringAlgorithms = [{ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer },
+const scoringAlgorithms = [{ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScore },
 
-{ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScorer },
+{ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScore },
 
 { name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScore }];
 
