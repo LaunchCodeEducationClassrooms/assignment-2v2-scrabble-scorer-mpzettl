@@ -107,8 +107,10 @@ Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', sc
 
 function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Score\n1 - for Vowel Bonus Score\n2 - for Classic Scrabble\n`);
-
   
+  console.log(`You chose: ${scoringAlgorithms[scorerPick].name}\n`);
+   console.log(scoringAlgorithms[scorerPick].description,"\n");
+  console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
   return input;
 }
 
@@ -136,11 +138,10 @@ function runProgram() {
    initialPrompt();
    scorerPrompt(word);
 
-   console.log(`You chose: ${scoringAlgorithms[scorerPick].name}\n`);
-   console.log(scoringAlgorithms[scorerPick].description,"\n");
+   
 
    //console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
-  console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
+  //console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
    
    //console.log(vowelBonusScore("aei"));
 }
