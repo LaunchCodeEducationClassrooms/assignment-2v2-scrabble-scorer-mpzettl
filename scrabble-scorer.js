@@ -149,7 +149,7 @@ function runProgram() {
    console.log(scoringAlgorithms[scorerPick].description,"\n");
 
    //console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
-  console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scorerFunction(word)}`)
+  console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
    
    
 }
