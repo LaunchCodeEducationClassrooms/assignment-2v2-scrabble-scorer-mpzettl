@@ -26,8 +26,7 @@ function oldScrabbleScorer(word) {
 		 }
  
 	  }
-	} //console.log(`Score for ${word}: ${score}`);
-  //letterPoints = Number(letterPoints);
+	} 
 	return score;//letterPoints; oldScrabbleScorer(word), 
  }}
 
@@ -46,10 +45,9 @@ function simpleScore(word){
   let score = 0;
   if(word !== undefined){
   for (let j = 0; j < word.length; j++) {
-    //letterPoints+= `Points for '${word[j]}': 1\n`;
+    
     score = Number(score) + 1;
-		 }//console.log(`Score for ${word}: ${score}`);
-     //letterPoints = Number(letterPoints);
+		 }
      
 }return score;
 	//letterPoints; simpleScorer(word), 
@@ -73,8 +71,7 @@ function vowelBonusScore(word){
           score = Number(score) + 1;//Number(simpleScorer);
         }
 
-      }//console.log(`Score for ${word}: ${score}`);
-      //letterPoints = Number(letterPoints);
+      }/
 
 	return score;//letterPoints; vowelBonusScorer(word), 
   }}};
@@ -93,8 +90,7 @@ let scrabbleScore = function(word){
 		 }
  
 	  }
-	} //console.log(`Score for ${word}: ${score}`);
-  //letterPoints = Number(letterPoints);
+	} 
 	return score;//letterPoints; scrabbleScore(word), 
  }};
 
@@ -103,18 +99,12 @@ const scoringAlgorithms = [Object({ name: 'Simple Score', description: 'Each let
 Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction:vowelBonusScore }),
 
 Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction:scrabbleScore } )];
-//function(input){ return simpleScore(word)
-//function(input){ return vowelBonusScore(word)
-//function(input){ return scrabbleScore(word)
+
 function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
 
-  /*console.log(`You chose: ${scoringAlgorithms[scorerPick].name}\n`);
-  console.log(scoringAlgorithms[scorerPick].description,"\n");
-
-  console.log(scoringAlgorithms[scorerPick].scorerFunction(word))
   
-  return scoringAlgorithms[scorerPick];*/
+  return input;
 }
 
 function transform(oldPointStructure) {
