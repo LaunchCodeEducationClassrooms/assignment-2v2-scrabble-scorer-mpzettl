@@ -35,7 +35,7 @@ function vowelBonusScore(word){
     for (const letter in word) {
       
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
-          
+          word[letter].toLowerCase();
           score = Number(score) + Number(vowelBonusScorer);
         
         }else{
@@ -75,7 +75,7 @@ function oldScrabbleScorer(word) {
 function initialPrompt() {
    console.log("Let's play some scrabble! Enter a word:");
    word = input.question("Enter a word: \n");
-   word = word.toUpperCase();
+   word = word.toLowerCase();
    return word;
 };
 
