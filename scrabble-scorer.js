@@ -71,7 +71,7 @@ function vowelBonusScore(word){
           score = Number(score) + 1;//Number(simpleScorer);
         }
 
-      }/
+      }
 
 	return score;//letterPoints; vowelBonusScorer(word), 
   }}};
