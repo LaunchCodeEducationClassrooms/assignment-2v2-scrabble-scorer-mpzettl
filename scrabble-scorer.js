@@ -101,7 +101,7 @@ Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 
 Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction:scrabbleScore } )];
 
 function scorerPrompt(word) {
-  scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
+  scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Score\n1 - for Vowel Bonus Score\n2 - for Classic Scrabble\n`);
 
   
   return input;
