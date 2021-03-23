@@ -15,17 +15,20 @@ const oldPointStructure = {
 function simpleScorer(word){
 	let letterPoints = "";
   let score = 0;
+  if(word !== undefined){
   for (let j = 0; j < word.length; j++) {
     letterPoints+= `Points for '${word[j]}': ${simpleScore}\n`;
     score = Number(score) + Number(simpleScore);
 		 }console.log(`Score for ${word}: ${score}`);
-     letterPoints = Number(letterPoints);
+     //letterPoints = Number(letterPoints);
+}
 	return score;//letterPoints; simpleScorer(word), 
     
 	  }
 function vowelBonusScorer(word){
 	let letterPoints = "";
   let score = 0;
+  if(word !== undefined){
   for (let k = 0; k < word.length; k++) {
   
     for (const letter in word) {
@@ -39,15 +42,17 @@ function vowelBonusScorer(word){
           score = Number(score) + Number(simpleScore);
         }
 
-      }console.log(`Score for ${word}: ${score}`);
-      letterPoints = Number(letterPoints);
+      }//console.log(`Score for ${word}: ${score}`);
+      //letterPoints = Number(letterPoints);
+
 	return score;//letterPoints; vowelBonusScorer(word), 
-  }
+  }}
   }
 
 function oldScrabbleScorer(word) {
 	let letterPoints = "";
   let score = 0;
+  if(word !== undefined){
 	for (let i = 0; i < word.length; i++) {
  
 	  for (const pointValue in oldPointStructure) {
@@ -58,10 +63,10 @@ function oldScrabbleScorer(word) {
 		 }
  
 	  }
-	} console.log(`Score for ${word}: ${score}`);
-  letterPoints = Number(letterPoints);
+	} //console.log(`Score for ${word}: ${score}`);
+  //letterPoints = Number(letterPoints);
 	return score;//letterPoints; oldScrabbleScorer(word), 
- }
+ }}
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
@@ -80,6 +85,7 @@ let vowelBonusScore = 3;
 let scrabbleScore = function(word){
   let letterPoints = "";
   let score = 0;
+  if(word !== undefined){
 	for (let i = 0; i < word.length; i++) {
     
 	  for (const letterKey in newPointStructure) {
@@ -90,22 +96,27 @@ let scrabbleScore = function(word){
 		 }
  
 	  }
-	} console.log(`Score for ${word}: ${score}`);
-  letterPoints = Number(letterPoints);
+	} //console.log(`Score for ${word}: ${score}`);
+  //letterPoints = Number(letterPoints);
 	return score;//letterPoints; scrabbleScore(word), 
- };
+ }};
 
-const scoringAlgorithms = [{ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer() },
+const scoringAlgorithms = [{ name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer },
 
-{ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScorer() },
+{ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scorerFunction: vowelBonusScorer },
 
-{ name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScore() }];
+{ name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScore }];
 
 
 function scorerPrompt(word) {
   scorerPick = input.question(`Your word is ${word}.\nEnter a scorer to score your word:\n0 - for Simple Scorer\n1 - for Vowel Bonus Scorer\n2 - for Classic Scrabble\n`);
+
+ /* console.log(`You chose: ${scoringAlgorithms[scorerPick].name}\n`);
+  console.log(scoringAlgorithms[scorerPick].description,"\n");
+
+  console.log(scoringAlgorithms[scorerPick].scorerFunction(word))
   
-  return scoringAlgorithms[scorerPick];
+  return scoringAlgorithms[scorerPick];*/
 }
 
 function transform(oldPointStructure) {
@@ -135,8 +146,8 @@ function runProgram() {
    console.log(`You chose: ${scoringAlgorithms[scorerPick].name}\n`);
    console.log(scoringAlgorithms[scorerPick].description,"\n");
 
-   console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
-  
+   //console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
+  console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scorerFunction(word)}`)
    
    
 }
