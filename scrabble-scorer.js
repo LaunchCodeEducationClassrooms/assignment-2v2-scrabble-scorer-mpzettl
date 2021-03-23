@@ -41,7 +41,7 @@ function initialPrompt() {
 };
 
 function simpleScore(word){
-	let letterPoints = "";
+	//let letterPoints = "";
   let score = 0;
   if(word !== undefined){
   for (let j = 0; j < word.length; j++) {
@@ -57,27 +57,30 @@ function vowelBonusScore(word){
 	let letterPoints = "";
   let score = 0;
   if(word !== undefined){
-    ;
+  
   for (let k = 0; k < word.length; k++) {
   
     for (const letter in word) {
-      
+      //word[letter].toUpperCase();
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
-          word[letter].toLowerCase();
+      //if((newPointStructure))
+          //word[letter].toLowerCase();
           score += 3;//Number(vowelBonusScorer);
-        
-        }else{
           
+          console.log(1)
+        }else{
+          //word[letter].toLowerCase();
           score += 1;//Number(simpleScorer);
+          console.log(2)
         }
 
       }
-
+  console.log(2, score);
 	return score;//letterPoints; vowelBonusScorer(word), 
   }}};
 
 let scrabbleScore = function(word){
-  let letterPoints = "";
+  //let letterPoints = "";
   let score = 0;
   if(word !== undefined){
 	for (let i = 0; i < word.length; i++) {
@@ -90,7 +93,7 @@ let scrabbleScore = function(word){
 		 }
  
 	  }
-	} 
+	} console.log(score);
 	return score;//letterPoints; scrabbleScore(word), 
  }};
 
@@ -137,7 +140,7 @@ function runProgram() {
    //console.log(scoringAlgorithms[scorerPick].scorerFunction(word));
   console.log(`Score for ${word}: ${scoringAlgorithms[scorerPick].scoringFunction(word)}`)
    
-   
+   console.log(vowelBonusScore("aei"));
 }
 
 // Don't write any code below this line //
