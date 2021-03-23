@@ -64,11 +64,11 @@ function vowelBonusScore(word){
       
       if ((oldPointStructure[1].slice(0,5)).includes(word[letter])){
           word[letter].toLowerCase();
-          score = Number(score) + 3;//Number(vowelBonusScorer);
+          score += 3;//Number(vowelBonusScorer);
         
         }else{
           
-          score = Number(score) + 1;//Number(simpleScorer);
+          score += 1;//Number(simpleScorer);
         }
 
       }
